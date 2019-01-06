@@ -1,0 +1,60 @@
+.prescription {
+    padding-top: 140px;
+    background-color: #F8F9F9;
+    .prescription-list {
+        margin: 10px 0;
+        background-color: #fff;
+        .prescription-item {
+            height: 1.6rem;
+            line-height: 1.6rem;
+            font-size: 0.6rem;
+            padding: 0 10px;
+
+            &.border {
+                border-bottom: 1px solid #EAEAED;
+            }
+            .prescription-block {
+                width: 0.25rem;
+                height: 0.6rem;
+                background-color: #24e5a8;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 5px;
+            }
+
+            .prescription-date {
+                vertical-align: middle;
+            }
+
+            .prescription-img {
+                width: 1rem;
+                vertical-align: middle;
+            }
+        }
+
+        .prescription-list-item {
+            border-bottom: 1px solid #EAEAED;
+            &:last-child {
+                border-bottom:none;
+            }
+            padding: 10px;
+            span {
+                font-size: 0.6rem;
+                display: block;
+                margin-bottom: 2px;
+                margin-left: 5px;
+            }
+            .prescription-list-item-date {
+                color:#999999;
+                margin-bottom: 5px;
+            }
+
+            .prescription-list-item-desc {
+                font-size: 0.7rem;
+                font-weight: bold;
+            }
+        }
+
+    }
+    
+}

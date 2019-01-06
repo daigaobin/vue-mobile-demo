@@ -1,0 +1,31 @@
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 0;
+}
+
+.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.clearfix {*zoom:1;}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.f12 {
+  font-size: 0.6rem;
+}
+
+.f14 {
+  font-size: 0.7rem;
+}
+
+.f16 {
+  font-size: 0.8rem;
+}

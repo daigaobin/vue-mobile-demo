@@ -1,0 +1,32 @@
+.prescription-details {
+    background-color: #F8F9F9;
+    .prescription-details-list {
+        padding: 10px;
+        background-color: #fff;
+        border-bottom: 1px solid #EAEAED;
+        margin: 10px 0;
+        font-size: 0.6rem;
+        &:first-child{
+            margin-top: 0;
+        }
+
+        .el-col > div {
+            margin-bottom: 5px;  
+            &:last-child{
+                margin-bottom: 0;
+            }  
+        }
+
+        label {
+            margin-right: 5px;
+        }
+
+
+
+    }
+
+    .mint-search-list {
+        padding-top: 96px;
+    }
+    
+}

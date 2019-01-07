@@ -1,9 +1,10 @@
+@import '@/styles/variables.scss';
 .prescription-details {
-    background-color: #F8F9F9;
+    background-color: $bgSub;
     .prescription-details-list {
         padding: 10px;
-        background-color: #fff;
-        border-bottom: 1px solid #EAEAED;
+        background-color: $bgWhite;
+        border-bottom: 1px solid $borderColor;
         margin: 10px 0;
         font-size: 0.6rem;
         &:first-child{

@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
-    <Header></Header>
-    <Tab></Tab>
+    <Header />
+    <Tab />
     <keep-alive> <router-view /> </keep-alive>
   </div>
 </template>

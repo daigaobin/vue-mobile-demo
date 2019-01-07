@@ -1,27 +1,19 @@
 <template>
   <div id="app">
-    <!-- <Header></Header>
-    <Tab></Tab>
-    <keep-alive> <router-view /> </keep-alive> -->
     <router-view />
   </div>
 </template>
 
 <script>
-import Header from "./components/header/header.vue";
-import Tab from "./components/tab/tab.vue";
-
 export default {
-  name: "app",
-  data() {
-    return {};
-  },
-  methods: {},
+  name: 'App',
   components: {
-    Header,
-    Tab
-  }
-};
+  },
+  data() {
+    return {}
+  },
+  methods: {}
+}
 </script>
 
 <style lang="scss">

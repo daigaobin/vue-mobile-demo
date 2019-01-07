@@ -1,20 +1,21 @@
+@import '@/styles/variables.scss';
 .product {
     padding-top: 140px;
-    background-color: #F8F9F9;
+    background-color: $bgSub;
     .product-add-bar {
-        background-color: #FFF;
+        background-color: $bgWhite;
         margin: 10px 0;
         height: 1.3rem;
         line-height: 1.3rem;
-        border-top:1px solid #EAEAED; 
-        border-bottom:1px solid #EAEAED; 
-        color: #24e5a8;
+        border-top:1px solid $borderColor; 
+        border-bottom:1px solid $borderColor; 
+        color: $themeGreen;
         font-size: 0.6rem;
-        padding-left: 10px;
+        text-align: center;
     }
     .product-list {
         li {
-            background-color: #FFF;
+            background-color: $bgWhite;
             margin: 10px 0;
             padding: 5px 0;
             &:first-child{
@@ -27,11 +28,11 @@
                 margin: 0 10px;
                 
                 .product-text {
-                    color: #666666;
+                    color: $fontColor666;
                 }
             }
             .product-status {
-                border-top:1px solid #EAEAED;
+                border-top:1px solid $borderColor;
             }
         }
     }

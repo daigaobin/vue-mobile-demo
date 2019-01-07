@@ -1,13 +1,13 @@
-import Header from "@/components/header/header.vue";
-import Tab from "@/components/tab/tab.vue";
+import Header from '@/components/header/header.vue'
+import Tab from '@/components/tab/tab.vue'
 export default {
-  name: "Layout",
+  name: 'Layout',
   data() {
-    return {};
+    return {}
   },
   methods: {},
   components: {
     Header,
     Tab
   }
-};
+}

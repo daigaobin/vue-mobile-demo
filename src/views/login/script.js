@@ -1,52 +1,53 @@
 /**
  * Created by daigb on 2018/12/24.
  */
-import { USER_LOGIN } from "@/store/mutationType";
+import { USER_LOGIN } from '@/store/modules/mutationType'
+import { Toast } from 'mint-ui'
 
 export default {
-  name: "Login",
+  name: 'Login',
   components: {},
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!value) {
-        callback(new Error("请输入手机号码"));
+        callback(new Error('请输入手机号码'))
       } else {
-        callback();
+        callback()
       }
-    };
+    }
     const validatePassword = (rule, value, callback) => {
-      if (value.length < 6) {
-        callback(new Error("请输入验证码"));
+      if (!value) {
+        callback(new Error('请输入验证码'))
       } else {
-        callback();
+        callback()
       }
-    };
+    }
     return {
       loginForm: {
-        username: "",
-        password: ""
+        username: '',
+        password: ''
       },
       loginRules: {
         username: [
-          { required: true, trigger: "blur", validator: validateUsername }
+          { required: true, trigger: 'blur', validator: validateUsername }
         ],
         password: [
-          { required: true, trigger: "blur", validator: validatePassword }
+          { required: true, trigger: 'blur', validator: validatePassword }
         ]
       },
-      timer: "",
+      timer: '',
       second: 6,
-      codeText: "获取验证码",
+      codeText: '获取验证码',
       disabledCodeTextBtn: false,
       loading: false,
       showDialog: false,
       redirect: undefined
-    };
+    }
   },
   watch: {
     $route: {
       handler: function(route) {
-        this.redirect = route.query && route.query.redirect;
+        this.redirect = route.query && route.query.redirect
       },
       immediate: true
     }
@@ -59,36 +60,39 @@ export default {
   },
   methods: {
     getCode() {
-      this.disabledCodeTextBtn = true;
+      this.disabledCodeTextBtn = true
       this.timer = setInterval(() => {
         if (this.second === 1) {
-          clearInterval(this.timer);
-          this.timer = null;
-          this.disabledCodeTextBtn = false;
-          this.codeText = "获取验证码";
-          return;
+          clearInterval(this.timer)
+          this.timer = null
+          this.disabledCodeTextBtn = false
+          this.codeText = '获取验证码'
+          this.second = 60
+          return
         }
-        this.codeText = this.second-- + "秒后获取";
-      }, 1000);
+        this.codeText = this.second-- + '秒后获取'
+      }, 1000)
     },
 
     handleLogin() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
-          this.loading = true;
-          this.$store
-            .dispatch(USER_LOGIN, this.loginForm)
-            .then(() => {
-              this.loading = false;
-              this.$router.push({ path: this.redirect || "/home" });
+          this.loading = true
+          this.$store.dispatch(USER_LOGIN, this.loginForm).then(() => {
+            this.loading = false
+            this.$router.push({ path: this.redirect || '/product' })
+          }).catch((resp) => {
+            Toast({
+              message: resp.data.data.message,
+              position: 'bottom',
+              duration: 2000
             })
-            .catch(() => {
-              this.loading = false;
-            });
+            this.loading = false
+          })
         } else {
-          return false;
+          return false
         }
-      });
+      })
     }
   }
-};
+}

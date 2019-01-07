@@ -11,27 +11,28 @@
 
 <script>
 export default {
-  name: "Header",
+  name: 'Header',
   props: {
     title: {
       type: String,
       default() {
-        return "我的";
+        return '我的'
       }
     }
   },
   data() {
-    return {};
+    return {}
   },
   methods: {}
-};
+}
 </script>
 
 <style scoped lang="scss">
+@import '~@/styles/variables.scss';
 .m-header {
-  background: #24e5a8;
+  background: $themeGreen;
   z-index: 999;
-  color: #fff;
+  color: $bgWhite;
   .mint-header-title {
     font-weight: bold;
   }

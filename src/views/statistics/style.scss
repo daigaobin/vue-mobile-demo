@@ -1,9 +1,10 @@
+@import '@/styles/variables.scss';
 .statistics {
     padding-top: 140px;
-    background-color: #F8F9F9;
+    background-color: $bgSub;
     .statistics-list {
         margin: 10px 0;
-        background-color: #fff;
+        background-color: $bgWhite;
         .statistics-item {
             height: 1.6rem;
             line-height: 1.6rem;
@@ -11,12 +12,12 @@
             padding: 0 10px;
 
             &.border {
-                border-bottom: 1px solid #EAEAED;
+                border-bottom: 1px solid $borderColor;
             }
             .statistics-block {
                 width: 0.25rem;
                 height: 0.6rem;
-                background-color: #24e5a8;
+                background-color: $themeGreen;
                 display: inline-block;
                 vertical-align: middle;
                 margin-right: 5px;
@@ -33,7 +34,7 @@
         }
 
         .statistics-list-item {
-            border-bottom: 1px solid #EAEAED;
+            border-bottom: 1px solid $borderColor;
             height: 2rem;
             &:last-child {
                 border-bottom:none;
@@ -48,12 +49,12 @@
                 }
             }
             .statistics-list-item-text {
-                color:#999999;
+                color:$fontColor999;
                 margin-bottom: 5px;
             }
 
             .statistics-list-item-number {
-                color: #24e5a8;
+                color: $themeGreen;
                 .number {
                     padding-right: 3px;
                 }

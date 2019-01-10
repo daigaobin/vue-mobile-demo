@@ -8,7 +8,7 @@ import './registerServiceWorker'
 import '@/utils/rem'
 import 'normalize.css'
 import '@/styles/index.scss'
-import '@/font/font-awesome/css/font-awesome.min.css'
+import 'font-awesome/css/font-awesome.min.css'
 import 'animate.css'
 
 import MintUI from 'mint-ui'

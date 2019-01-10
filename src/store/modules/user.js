@@ -59,10 +59,10 @@ const user = {
      * @param {*} userInfo
      */
     async [USER_LOGIN]({ commit }, userInfo) {
-      const username = userInfo.username.trim()
+      const phone = userInfo.phone.trim()
       return new Promise((resolve, reject) => {
-        login(username, userInfo.password).then((resp) => {
-          if (resp.data && resp.data.data && resp.data.status === 200) {
+        login(phone, userInfo.vcode).then((resp) => {
+          if (resp.data && resp.data.code === 200) {
             commit('SET_TOKEN', resp.data.data.token)
             setToken(resp.data.data.token)
             resolve(resp)

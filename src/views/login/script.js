@@ -6,37 +6,41 @@ import { Toast } from 'mint-ui'
 
 export default {
   name: 'Login',
+
   components: {},
+
   data() {
-    const validateUsername = (rule, value, callback) => {
+    const validatePhone = (rule, value, callback) => {
       if (!value) {
         callback(new Error('请输入手机号码'))
       } else {
         callback()
       }
     }
-    const validatePassword = (rule, value, callback) => {
+
+    const validateVcode = (rule, value, callback) => {
       if (!value) {
         callback(new Error('请输入验证码'))
       } else {
         callback()
       }
     }
+
     return {
       loginForm: {
-        username: '',
-        password: ''
+        phone: '',
+        vcode: ''
       },
       loginRules: {
-        username: [
-          { required: true, trigger: 'blur', validator: validateUsername }
+        phone: [
+          { required: true, trigger: 'blur', validator: validatePhone }
         ],
-        password: [
-          { required: true, trigger: 'blur', validator: validatePassword }
+        vcode: [
+          { required: true, trigger: 'blur', validator: validateVcode }
         ]
       },
       timer: '',
-      second: 6,
+      second: 60,
       codeText: '获取验证码',
       disabledCodeTextBtn: false,
       loading: false,
@@ -44,20 +48,15 @@ export default {
       redirect: undefined
     }
   },
-  watch: {
-    $route: {
-      handler: function(route) {
-        this.redirect = route.query && route.query.redirect
-      },
-      immediate: true
-    }
-  },
+
   created() {
     // window.addEventListener('hashchange', this.afterQRScan)
   },
+
   destroyed() {
     // window.removeEventListener('hashchange', this.afterQRScan)
   },
+
   methods: {
     getCode() {
       this.disabledCodeTextBtn = true
@@ -83,7 +82,7 @@ export default {
             this.$router.push({ path: this.redirect || '/product' })
           }).catch((resp) => {
             Toast({
-              message: resp.data.data.message,
+              message: resp.data.msg,
               position: 'bottom',
               duration: 2000
             })

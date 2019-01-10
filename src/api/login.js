@@ -1,11 +1,11 @@
 import http from '@/utils/http'
 
-export function login(username, password) {
+export function login(phone, vcode) {
   const data = {
-    username,
-    password
+    phone,
+    vcode
   }
-  return http.post('/login', data)
+  return http.post('/wap/login', data)
 }
 
 export function getUserInfo() {

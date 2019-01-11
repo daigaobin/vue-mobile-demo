@@ -31,7 +31,7 @@
             :disabled="disabledCodeTextBtn"
             size="mini"
             class="login-code-btn"
-            @click="getCode"
+            @click="getVcode"
           >
             {{ codeText }}
           </el-button>

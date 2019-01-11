@@ -1,23 +1,79 @@
 <template>
   <div class="prescription-details">
-    <el-row class="prescription-details-list ">
-      <el-col> 编号：6012311231321 </el-col>
-    </el-row>
+    <div class="prescription-details-list ">
+      <div class="prescription-details-list-item">
+        <label>编号：</label>{{ prescriptionDetails.proCode }}
+      </div>
+    </div>
 
-    <el-row class="prescription-details-list ">
-      <el-col :span="12">
-        <div><label>患者姓名：</label>张三</div>
-        <div><label>患者姓名：</label>张三</div>
-        <div><label>患者姓名：</label>张三</div>
-      </el-col>
-      <el-col :span="12">
-        <div><label>年龄：</label>24</div>
-      </el-col>
-    </el-row>
+    <div class="prescription-details-list">
+      <div style="width:50%;display:inline-block">
+        <div class="prescription-details-list-item">
+          <label>患者姓名：</label>{{ prescriptionDetails.name }}
+        </div>
+        <div class="prescription-details-list-item">
+          <label>性别：</label>{{ prescriptionDetails.sex }}
+        </div>
+        <div class="prescription-details-list-item">
+          <label>过敏史：</label>{{ prescriptionDetails.allergichistory }}
+        </div>
+      </div>
 
-    <el-row class="prescription-details-list ">
-      <el-col> <label>主诉：</label>6012311231321 </el-col>
-    </el-row>
+      <div style="width:50%;display:inline-block">
+        <div class="prescription-details-list-item">
+          <label>年龄：</label>{{ prescriptionDetails.age }}
+        </div>
+        <div class="prescription-details-list-item">
+          <label>科室：</label>{{ prescriptionDetails.department }}
+        </div>
+        <div class="prescription-details-list-item">
+          <label>日期：</label>{{ prescriptionDetails.seedate }}
+        </div>
+      </div>
+    </div>
+
+    <div class="prescription-details-list ">
+      <div class="prescription-details-list-item">
+        <label>主诉：</label>{{ prescriptionDetails.chiefcomplaint }}
+      </div>
+    </div>
+
+    <div class="prescription-details-list ">
+      <div class="left-label">
+        <div class="prescription-details-list-item">
+          <label>诊断：</label>
+        </div>
+      </div>
+
+      <div class="right-text">
+        <div class="prescription-details-list-item">
+          <label>{{ prescriptionDetails.diagnosis }}</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="prescription-details-list ">
+      <div class="left-label">
+        <div class="prescription-details-list-item">
+          <label>R</label>
+        </div>
+      </div>
+
+      <div class="right-text">
+        <div v-for="(l,$index) in prescriptionDetails.list" :key="$index + productsName" class="prescription-details-list-item">
+          <label>{{ l.productsName }}</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="prescription-details-list ">
+      <div class="prescription-details-list-item">
+        <label>药房：</label>{{ prescriptionDetails.pharmacist }}
+      </div>
+      <div class="prescription-details-list-item">
+        <label>药师：</label>{{ prescriptionDetails.pharmacy }}
+      </div>
+    </div>
   </div>
 </template>
 

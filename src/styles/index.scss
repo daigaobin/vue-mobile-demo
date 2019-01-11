@@ -30,3 +30,40 @@ li {
 .f16 {
   font-size: 0.8rem;
 }
+
+
+#app {
+  .mint-navbar .mint-tab-item {
+    padding: 0;
+    .mint-tab-item-icon {
+      width: auto;
+      height: auto;
+      margin: 0;
+    }
+  }
+
+  .mint-switch-input:checked + .mint-switch-core {
+    border-color: $themeGreen;
+    background-color: $themeGreen;
+  }
+}
+
+.mint-msgbox-wrapper {
+  .mint-msgbox-confirm {
+    color: $themeGreen;
+  }
+}
+
+#app {
+  .search-input {
+    input.el-input__inner {
+      background-color: #F2F2F2;
+      border:none;
+    }
+  }
+
+  .el-button--primary {
+    background-color: $themeGreen;
+    border-color: $themeGreen;
+  }
+}

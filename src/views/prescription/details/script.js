@@ -1,65 +1,31 @@
 import { MessageBox } from 'mint-ui'
 import expandSrcUrl from '@/assets/down.png'
 import shrinkSrcUrl from '@/assets/up.png'
+import { getPrescriptionDetailByID } from '@/api/prescription'
+
 export default {
-  name: 'Prescription',
+  name: 'PrescriptionDetails',
+
   data() {
     return {
-      allLoaded: false,
-      prescriptionList: [
-        {
-          date: '2018-08-08',
-          children: [
-            {
-              avatar: '',
-              name: '张三',
-              date: '2018-08-08 12:30:30',
-              desc: '感冒'
-            },
-            {
-              avatar: '',
-              name: '张三',
-              date: '2018-08-08 12:30:30',
-              desc: '感冒'
-            }
-          ],
-          expand: false
-        },
-        {
-          date: '2018-08-08',
-          children: [
-            {
-              avatar: '',
-              name: '张三',
-              date: '2018-08-08 12:30:30',
-              desc: '感冒'
-            }
-          ],
-          expand: false
-        }
-      ]
+      id: this.$route.params.id,
+      prescriptionDetails: {}
     }
   },
+
   computed: {},
+
+  created() {
+    this.getPrescriptionDetailByID()
+  },
+
   methods: {
-    getProductList() {},
-
-    getImgUrl(pr) {
-      return pr.expand ? shrinkSrcUrl : expandSrcUrl
-    },
-
-    toggle(pr) {
-      this.$set(pr, 'expand', !pr.expand)
-    },
-
-    deleteProduct() {
-      MessageBox.confirm('确定要删除此产品?').then(action => {
-        debugger
+    getPrescriptionDetailByID() {
+      getPrescriptionDetailByID(this.id).then((resp) => {
+        if (resp.data && resp.data.code === 200) {
+          this.prescriptionDetails = resp.data.data
+        }
       })
-    },
-
-    goDetails(c) {
-      this.$router.push({ name: 'PrescriptionDetails' })
     }
   },
   components: {}

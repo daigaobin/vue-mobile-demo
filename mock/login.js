@@ -15,16 +15,26 @@ const userMap = {
   }
 }
 
+const vcode = {
+  18888888888: {
+    msg: '',
+    data: {
+      vcode: 123456
+    },
+    code: 200
+  }
+}
+
 export default {
   '/wap/login': config => {
     const { phone } = config.body
     return userMap[phone] || userMap.error
   },
-  '/logout': 'success',
-  '/user/info': config => {
-    const { token } = config.query
-    if (userMap[token]) {
-      return userMap[token]
+
+  '/wap/getVcode': config => {
+    const { phone } = config.query
+    if (vcode[phone]) {
+      return vcode[phone]
     } else {
       return false
     }

@@ -7,24 +7,24 @@
     <mt-loadmore :bottom-method="getProductList" :bottom-all-loaded="allLoaded">
       <ul class="product-list">
         <li v-for="(p, $index) in productList" :key="$index">
-          <div class="clearfix product-item">
-            <span class="left ">
-              {{ p.title }}
+          <div class="clearfix">
+            <span class="left product-name">
+              {{ p.commerceName }}
             </span>
-            <span class="right">
+            <span class="right product-name">
               <mt-switch v-model="p.status" />
             </span>
           </div>
-          <div class="product-item">
-            <span class="product-desc product-text">
-              {{ p.desc }}
+          <div class="product-desc">
+            <span>
+              {{ p.manufacturer }} {{ p.specifications }}
             </span>
           </div>
-          <div class="product-item product-status">
-            <span class="left product-text">
-              状态：{{ p.statusText }}
+          <div class="product-status">
+            <span class="left">
+              状态：{{ p.status }}
             </span>
-            <span class="right product-text" @click="deleteProduct">
+            <span class="right" @click="deleteProduct">
               <i class="el-icon-delete">
                 &nbsp;删除
               </i>

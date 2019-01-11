@@ -1,12 +1,7 @@
 <template>
-  <mt-header fixed :title="title" class="m-header">
-    <!-- <router-link to="/" slot="left">
-      <mt-button> <i class="fa fa-bars" slot="icon" /> </mt-button>
-    </router-link>
-    <router-link to="/" slot="right">
-      <mt-button> <i class="fa fa-search" slot="icon" /> </mt-button>
-    </router-link> -->
-  </mt-header>
+  <header class="m-header">
+    {{ title }}
+  </header>
 </template>
 
 <script>
@@ -31,10 +26,14 @@ export default {
 @import '~@/styles/variables.scss';
 .m-header {
   background: $themeGreen;
-  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
   color: $bgWhite;
-  .mint-header-title {
-    font-weight: bold;
-  }
+  font-size: 0.54rem;
+  text-align: center;
+  padding-top: 0.42rem;
 }
 </style>

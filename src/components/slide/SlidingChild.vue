@@ -2,7 +2,8 @@
   <transition name="sliding-window">
     <div v-if="show" class="sliding-window">
       <div class="back">
-        <i class="el-icon-back" @click="close" />&nbsp;{{ title }}
+        <i class="el-icon-back left" @click="close" />
+        {{ title }}
       </div>
 
       <router-view @close="closeSuccess" />
@@ -84,16 +85,21 @@ export default {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1000;
-  /*right: -800px;*/
-  background: $bgWhite;
+  z-index: 10;
+  background: $bgSub;
   overflow-y: auto;
   .back {
-    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    text-align: center;
+    padding: 16px 16px 13px 16px;
     background-color: $themeGreen;
     color: $bgWhite;
     border-bottom: 1px solid #eaeaed;
-    font-size: 0.7rem;
+    font-size: 27px;
   }
 }
 
@@ -105,17 +111,4 @@ export default {
   animation: lightSpeedOut 0.5s;
 }
 
-.sliding-window .close {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  background: transparent;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-}
 </style>

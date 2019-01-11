@@ -1,62 +1,64 @@
 @import '@/styles/variables.scss';
 .statistics {
-    padding-top: 140px;
+    padding-top: 5.32rem;
     background-color: $bgSub;
     .statistics-list {
-        margin: 10px 0;
+        margin: 0.1rem 0;
         background-color: $bgWhite;
         .statistics-item {
-            height: 1.6rem;
-            line-height: 1.6rem;
-            font-size: 0.6rem;
-            padding: 0 10px;
+            padding: 0.44rem 0.39rem;
+            font-size: 0rem;
 
             &.border {
                 border-bottom: 1px solid $borderColor;
             }
             .statistics-block {
-                width: 0.25rem;
-                height: 0.6rem;
+                width: 0.12rem;
+                height: 0.42rem;
                 background-color: $themeGreen;
                 display: inline-block;
                 vertical-align: middle;
-                margin-right: 5px;
+                margin-right: 0.05rem;
             }
 
             .statistics-date {
+                color: $fontColor333;
+                font-size: 0.48rem;
                 vertical-align: middle;
             }
 
             .statistics-img {
-                width: 1rem;
-                vertical-align: middle;
+                width: 0.4rem;
+                height: 0.2rem;
+                font-size: 0.48rem;
+                margin-top: 0.2rem;
             }
         }
 
         .statistics-list-item {
             border-bottom: 1px solid $borderColor;
-            height: 2rem;
+            padding: 0.45rem 0.39rem;
             &:last-child {
                 border-bottom:none;
             }
-            padding: 10px;
             span {
-                font-size: 0.6rem;
+                font-size: 0.48rem;
                 display: block;
-                margin-bottom: 5px;
+                margin-bottom: 0.18rem;
                 &:last-child{
                     margin-bottom: 0;
                 }
             }
             .statistics-list-item-text {
-                color:$fontColor999;
-                margin-bottom: 5px;
+                font-size: 0.42rem;
+                color:$fontColor666;
             }
 
             .statistics-list-item-number {
+                font-size: 0.39rem;
                 color: $themeGreen;
                 .number {
-                    padding-right: 3px;
+                    font-size: 0.72rem;
                 }
             }
 

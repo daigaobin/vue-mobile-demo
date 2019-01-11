@@ -6,10 +6,10 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    /* {
-      path: '/',
+    {
+      path: '',
       redirect: '/login'
-    }, */
+    },
     {
       path: '/login',
       name: 'Login',
@@ -45,7 +45,7 @@ export default new Router({
           component: () => import('@/views/prescription/index'),
           children: [
             {
-              path: 'details',
+              path: 'details/:id',
               name: 'PrescriptionDetails',
               component: () => import('@/views/prescription/details/index')
             }

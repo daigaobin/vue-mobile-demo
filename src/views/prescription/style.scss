@@ -1,57 +1,76 @@
+@import '@/styles/variables.scss';
 .prescription {
-    padding-top: 140px;
-    background-color: #F8F9F9;
+    padding-top: 5.32rem;
+    background-color: $bgSub;
     .prescription-list {
-        margin: 10px 0;
-        background-color: #fff;
+        margin: 0.1rem 0;
+        background-color: $bgWhite;
         .prescription-item {
-            height: 1.6rem;
-            line-height: 1.6rem;
-            font-size: 0.6rem;
-            padding: 0 10px;
-
+            padding: 0.44rem 0.39rem;
+            font-size: 0rem;
             &.border {
-                border-bottom: 1px solid #EAEAED;
+                border-bottom: 1px solid $borderColor;
             }
             .prescription-block {
-                width: 0.25rem;
-                height: 0.6rem;
-                background-color: #24e5a8;
+                width: 0.12rem;
+                height: 0.42rem;
+                background-color: $themeGreen;
                 display: inline-block;
                 vertical-align: middle;
-                margin-right: 5px;
+                margin-right: 0.05rem;
             }
 
             .prescription-date {
+                color: $fontColor333;
+                font-size: 0.48rem;
                 vertical-align: middle;
             }
 
-            .prescription-img {
-                width: 1rem;
-                vertical-align: middle;
+            .prescription-down {
+                width: 0.4rem;
+                height: 0.2rem;
+                font-size: 0.48rem;
+                margin-top: 0.2rem;
             }
+
         }
 
         .prescription-list-item {
-            border-bottom: 1px solid #EAEAED;
+            border-bottom: 1px solid $borderColor;
+            padding: 0.45rem 0.39rem;
             &:last-child {
                 border-bottom:none;
             }
-            padding: 10px;
-            span {
-                font-size: 0.6rem;
-                display: block;
-                margin-bottom: 2px;
-                margin-left: 5px;
+
+            .prescription-list-item-avatar {
+                width: 1.2rem;
+                height: 1.2rem;
+                border-radius: 50%;
             }
+
+
+            span {
+                font-size: 0.45rem;
+                display: block;
+                margin-bottom: 0.18rem;
+                margin-left: 0.36rem;
+            }
+
             .prescription-list-item-date {
-                color:#999999;
-                margin-bottom: 5px;
+                color: $fontColor999;
+                margin-bottom: 0.48rem;
             }
 
             .prescription-list-item-desc {
-                font-size: 0.7rem;
-                font-weight: bold;
+                font-size: 0.45rem;
+                color: $fontColor333;
+            }
+
+            .prescription-list-item-details-btn {
+                width: 2.1rem;
+                height: 0.9rem;
+                background-color: $themeGreen;
+                border-radius: 0.45rem;
             }
         }
 

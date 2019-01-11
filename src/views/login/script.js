@@ -3,6 +3,7 @@
  */
 import { USER_LOGIN } from '@/store/modules/mutationType'
 import { Toast } from 'mint-ui'
+import { getVcode } from '@/api/login'
 
 export default {
   name: 'Login',
@@ -14,7 +15,9 @@ export default {
       if (!value) {
         callback(new Error('请输入手机号码'))
       } else {
-        callback()
+        this.checkPhone(value)
+          ? callback(new Error('请输入正确的手机号码'))
+          : callback()
       }
     }
 
@@ -58,7 +61,8 @@ export default {
   },
 
   methods: {
-    getCode() {
+
+    setCountdown() {
       this.disabledCodeTextBtn = true
       this.timer = setInterval(() => {
         if (this.second === 1) {
@@ -71,6 +75,18 @@ export default {
         }
         this.codeText = this.second-- + '秒后获取'
       }, 1000)
+      return true
+    },
+
+    getVcode() {
+      if (this.validatePhone()) {
+        this.setCountdown()
+        getVcode(this.loginForm.phone).then((resp) => {
+          if (resp.data && resp.data.code === 200) {
+            this.loginForm.vcode = resp.data.data.vcode
+          }
+        })
+      }
     },
 
     handleLogin() {
@@ -92,6 +108,32 @@ export default {
           return false
         }
       })
+    },
+
+    validatePhone() {
+      if (!this.loginForm.phone) {
+        Toast({
+          message: '请输入手机号码',
+          position: 'bottom',
+          duration: 2000
+        })
+        return false
+      }
+
+      if (this.checkPhone(this.loginForm.phone)) {
+        /* Toast({
+          message: '请输入正确的手机号码',
+          position: 'bottom',
+          duration: 2000
+        }) */
+        return false
+      }
+
+      return true
+    },
+
+    checkPhone(phone) {
+      return !(/^1[34578]\d{9}$/.test(phone))
     }
   }
 }

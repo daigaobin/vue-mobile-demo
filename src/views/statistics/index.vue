@@ -35,7 +35,8 @@
                 <div class="right statistics-list-item-number">
                   <i class="f16 number">
                     20
-                  </i><i class="f12">
+                  </i>
+                  <i>
                     件
                   </i>
                 </div>

@@ -1,0 +1,50 @@
+@import '@/styles/variables.scss';
+.product {
+    padding-top: 5.32rem;
+    background-color: $bgSub;
+    .product-add-bar {
+        background-color: $bgWhite;
+        margin: 0.1rem 0;
+        height: 1.35rem;
+        line-height: 1.35rem;
+        border-top:1px solid $borderColor; 
+        border-bottom:1px solid $borderColor; 
+        color: $themeGreen;
+        font-size: 0.48rem;
+        text-align: center;
+    }
+    .product-list {
+        li {
+            background-color: $bgWhite;
+            margin: 0.1rem 0;
+            padding: 0.05rem 0;
+            height: 3.4rem;
+            border-top:1px solid $borderColor; 
+            border-bottom:1px solid $borderColor; 
+            &:first-child{
+                margin-top: 0;
+            }
+            > div {
+                margin: 0 0.39rem;
+            }
+                
+            .product-name {
+                font-size: 0.48rem;
+                padding-top: 0.54rem;
+            }
+
+            .product-desc {
+                color: $fontColor666;
+                font-size: 0.42rem;
+                margin-bottom: 0.54rem;
+            }
+            .product-status {
+                color: $fontColor666;
+                padding-top: 0.42rem;
+                font-size: 0.42rem;
+                border-top:1px solid $borderColor;
+            }
+        }
+    }
+    
+}

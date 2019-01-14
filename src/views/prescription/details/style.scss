@@ -1,0 +1,46 @@
+@import '@/styles/variables.scss';
+.prescription-details {
+    font-size:0;
+    padding-top:61px;
+
+    .left-label {
+        float: left;
+        width: 72px;
+    }
+    .right-text {
+        word-wrap:break-word;
+        word-break:break-all;
+        overflow: hidden;
+    }
+
+    .prescription-details-list {
+        background-color: $bgWhite;
+        padding: 0 16px;
+        border-bottom: 1px solid $borderColor;
+        border-top: 1px solid $borderColor;
+        margin: 10px 0;
+        font-size: 22px;
+        color: $fontColor666;
+        &:first-child{
+            margin-top: 0;
+            border-top: none;
+        }
+
+
+        .prescription-details-list-item {
+            padding: 12px 0;
+        }
+
+        label {
+            margin-right: 5px;
+        }
+
+
+
+    }
+
+    .mint-search-list {
+        padding-top: 96px;
+    }
+    
+}

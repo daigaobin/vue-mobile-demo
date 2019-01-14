@@ -1,0 +1,69 @@
+@import '@/styles/variables.scss';
+.statistics {
+    padding-top: 5.32rem;
+    background-color: $bgSub;
+    .statistics-list {
+        margin: 0.1rem 0;
+        background-color: $bgWhite;
+        .statistics-item {
+            padding: 0.44rem 0.39rem;
+            font-size: 0rem;
+
+            &.border {
+                border-bottom: 1px solid $borderColor;
+            }
+            .statistics-block {
+                width: 0.12rem;
+                height: 0.42rem;
+                background-color: $themeGreen;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 0.05rem;
+            }
+
+            .statistics-date {
+                color: $fontColor333;
+                font-size: 0.48rem;
+                vertical-align: middle;
+            }
+
+            .statistics-img {
+                width: 0.4rem;
+                height: 0.2rem;
+                font-size: 0.48rem;
+                margin-top: 0.2rem;
+            }
+        }
+
+        .statistics-list-item {
+            border-bottom: 1px solid $borderColor;
+            padding: 0.45rem 0.39rem;
+            &:last-child {
+                border-bottom:none;
+            }
+            span {
+                font-size: 0.48rem;
+                display: block;
+                margin-bottom: 0.18rem;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+            .statistics-list-item-text {
+                font-size: 0.42rem;
+                color:$fontColor666;
+            }
+
+            .statistics-list-item-number {
+                font-size: 0.39rem;
+                color: $themeGreen;
+                .number {
+                    font-size: 0.72rem;
+                }
+            }
+
+        }
+
+    }
+    
+}
